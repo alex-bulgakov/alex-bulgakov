@@ -23,7 +23,7 @@
 	<!-- if you are using bootstrap sass mixins you can remove this code -->
 
 	<!-- Header CSS (first screen styles from header.min.css) - inserted in the build of the project -->
-	<style>::-webkit-input-placeholder{color:#666;opacity:1}:-moz-placeholder{color:#666;opacity:1}::-moz-placeholder{color:#666;opacity:1}:-ms-input-placeholder{color:#666;opacity:1}body input:focus:required:invalid,body input:required:valid,body textarea:focus:required:invalid,body textarea:required:valid{color:#666}body{font-size:16px;min-width:320px;position:relative;line-height:1.6;font-family:Verdana,sans-serif;overflow-x:hidden}</style>
+	<style>.about h2,.menu{text-align:center}.about dt,.about h2,.menu a{text-transform:uppercase}::-webkit-input-placeholder{color:#666;opacity:1}:-moz-placeholder{color:#666;opacity:1}::-moz-placeholder{color:#666;opacity:1}:-ms-input-placeholder{color:#666;opacity:1}body input:focus:required:invalid,body input:required:valid,body textarea:focus:required:invalid,body textarea:required:valid{color:#666}*{-webkit-box-sizing:border-box;box-sizing:border-box;-webkit-transition-duration:.2s;transition-duration:.2s}body{font-size:16px;min-width:320px;position:relative;line-height:1.6;font-family:Verdana,sans-serif;overflow-x:hidden;list-style-type:none;padding:0;margin:0}a{text-decoration:none;color:#000}.menu{border-bottom:1px solid rgba(0,0,0,.1);width:95%;margin:0 auto 80px}.menu li{display:inline-block;margin:0 20px}.menu a{display:block;padding:20px 0;opacity:.5}.menu a:hover{opacity:1}.about h2{font-size:1.5em;font-weight:100;margin-bottom:50px}.about dl{min-width:200px;max-width:400px;margin:auto}.about dt{font-weight:700;font-size:.9em;margin-bottom:5px}.about dt:after{content:":"}.about dd{margin-left:10px;margin-bottom:25px}.about li{border-bottom:1px dotted rgba(0,0,0,.3)}</style>
 
 	<!-- Load CSS, CSS Localstorage & WebFonts Main Function -->
 	<script>!function(e){"use strict";function t(e,t,n){e.addEventListener?e.addEventListener(t,n,!1):e.attachEvent&&e.attachEvent("on"+t,n)};function n(t,n){return e.localStorage&&localStorage[t+"_content"]&&localStorage[t+"_file"]===n};function a(t,a){if(e.localStorage&&e.XMLHttpRequest)n(t,a)?o(localStorage[t+"_content"]):l(t,a);else{var s=r.createElement("link");s.href=a,s.id=t,s.rel="stylesheet",s.type="text/css",r.getElementsByTagName("head")[0].appendChild(s),r.cookie=t}}function l(e,t){var n=new XMLHttpRequest;n.open("GET",t,!0),n.onreadystatechange=function(){4===n.readyState&&200===n.status&&(o(n.responseText),localStorage[e+"_content"]=n.responseText,localStorage[e+"_file"]=t)},n.send()}function o(e){var t=r.createElement("style");t.setAttribute("type","text/css"),r.getElementsByTagName("head")[0].appendChild(t),t.styleSheet?t.styleSheet.cssText=e:t.innerHTML=e}var r=e.document;e.loadCSS=function(e,t,n){var a,l=r.createElement("link");if(t)a=t;else{var o;o=r.querySelectorAll?r.querySelectorAll("style,link[rel=stylesheet],script"):(r.body||r.getElementsByTagName("head")[0]).childNodes,a=o[o.length-1]}var s=r.styleSheets;l.rel="stylesheet",l.href=e,l.media="only x",a.parentNode.insertBefore(l,t?a:a.nextSibling);var c=function(e){for(var t=l.href,n=s.length;n--;)if(s[n].href===t)return e();setTimeout(function(){c(e)})};return l.onloadcssdefined=c,c(function(){l.media=n||"all"}),l},e.loadLocalStorageCSS=function(l,o){n(l,o)||r.cookie.indexOf(l)>-1?a(l,o):t(e,"load",function(){a(l,o)})}}(this);</script>
@@ -62,12 +62,12 @@
 <body>
 
 	<!-- Custom HTML -->
-	<header class="header">
+	<header class="header" id="main">
 		<nav class="menu">
 			<ul>
-				<li><a href="#">Главная</a></li>
-				<li><a href="#">Портфолио</a></li>
-				<li><a href="#">Контакты</a></li>
+				<li><a href="#main">Главная</a></li>
+				<li><a href="#portfolio">Портфолио</a></li>
+				<li><a href="#contacts">Контакты</a></li>
 			</ul>
 		</nav>
 	</header>
@@ -116,8 +116,16 @@
 		</dl>
 	</section>
 
+	<nav class="menu" id="portfolio">
+			<ul>
+				<li><a href="#main">Главная</a></li>
+				<li><a href="#portfolio">Портфолио</a></li>
+				<li><a href="#contacts">Контакты</a></li>
+			</ul>
+		</nav>
+
 	<section class="portfolio">
-		<h2>Portfolio</h2>
+		<h2>Мои работы:</h2>
 		<div class="portfolio__items">
 
 				<a href="portfolio/amazing/index.html" class="portfolio__item" target="_blank">
@@ -143,13 +151,24 @@
 		</div>
 	</section>
 
-	<section class="contacts">
-		<h2>Контакты</h2>
+	<nav class="menu" id="contacts">
+			<ul>
+				<li><a href="#main">Главная</a></li>
+				<li><a href="#portfolio">Портфолио</a></li>
+				<li><a href="#contacts">Контакты</a></li>
+			</ul>
+		</nav>
+
+	<section class="contacts" >
+		<h2>Контакты:</h2>
 		<ul>
 			<li>Почта: <a href="mailto:master8423@gmail.com">master8423@gmail.com</a></li>
 		</ul>
 	</section>
 
+	<a class="top" href="#main">Наверх</a>
+
+	
 	<!-- Optimized loading JS Start -->
 	<script>var scr = {"scripts":[
 		{"src" : "js/libs.min.js", "async" : false},
